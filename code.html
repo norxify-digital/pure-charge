@@ -1,0 +1,2033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 5rem;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "surface-container": "#e7eeff",
+              "on-error": "#ffffff",
+              "outline-variant": "#c1c7d4",
+              "on-secondary": "#ffffff",
+              "on-background": "#101c2e",
+              "on-secondary-container": "#287300",
+              "surface-dim": "#cfdaf3",
+              "inverse-primary": "#a5c8ff",
+              "on-primary-fixed-variant": "#004785",
+              surface: "#f9f9ff",
+              "primary-container": "#1175d2",
+              "secondary-fixed-dim": "#78de4c",
+              "on-error-container": "#93000a",
+              "surface-container-low": "#f0f3ff",
+              "surface-container-highest": "#d7e3fc",
+              "on-surface": "#101c2e",
+              "inverse-on-surface": "#ecf1ff",
+              "tertiary-fixed": "#b9eaff",
+              "on-tertiary-fixed": "#001f29",
+              "on-tertiary-fixed-variant": "#004d62",
+              "surface-tint": "#005fae",
+              "tertiary-container": "#007f9e",
+              "surface-bright": "#f9f9ff",
+              outline: "#717783",
+              "on-primary-fixed": "#001c3a",
+              error: "#ba1a1a",
+              "tertiary-fixed-dim": "#56d5ff",
+              background: "#f9f9ff",
+              "secondary-fixed": "#93fb65",
+              primary: "#005daa",
+              secondary: "#256d00",
+              "surface-variant": "#d7e3fc",
+              "on-secondary-fixed-variant": "#1a5200",
+              "surface-container-high": "#dee8ff",
+              "on-surface-variant": "#414752",
+              "error-container": "#ffdad6",
+              "secondary-container": "#93fb65",
+              "on-primary-container": "#fefcff",
+              tertiary: "#00647d",
+              "on-tertiary-container": "#fafdff",
+              "primary-fixed-dim": "#a5c8ff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#d4e3ff",
+              "inverse-surface": "#253144",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#062100",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-lg": "1.5rem",
+              "gutter-mobile": "1rem",
+              margin: "3rem",
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+              gutter: "1.5rem",
+              "space-md": "1rem",
+              "space-xs": "0.25rem",
+              "margin-mobile": "1.25rem",
+            },
+            fontFamily: {
+              "label-md": ["Inter"],
+              "label-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "body-md": ["Inter"],
+              "metric-display": ["Space Grotesk"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "headline-md": ["Space Grotesk"],
+              "display-hero": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "display-hero-mobile": ["Space Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+            },
+            fontSize: {
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "metric-display": [
+                "44px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "26px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "38px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-md shrink-0">
+          <img
+            alt="PureCharge Logo"
+            class="h-12 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdByUwMqKza85c71rNJdsoPV7fIrGas28Gfxjc8XdkD5PkG-2IPZxkhmS1yo_UJQkllAgcOuGBQumUKqhKSe2b9GXaA1RCLiucHhvTB8AoWX40-uKVQ684F80agCay9nNc1YBR5xWx1aeB6-oAtZW07dZNug4_4sLNGXD6VziRIKOJcZntw3E7gmrzLJNQ9SYy5TMcTJoeIea4T25fw3ET5SO4TFzh1aHamtRLJiFlKVUuwMEiCEYOvw"
+          />
+          <div class="flex flex-col"></div>
+        </div>
+        <nav
+          class="hidden xl:flex items-center gap-space-lg"
+          data-active-classes="text-primary font-label-lg border-b-2 border-primary"
+        >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="home"
+            href="#home"
+            >Home</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="services"
+            href="#services"
+            >Services</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="brands"
+            href="#brands"
+            >Brands</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="pricing"
+            href="#pricing"
+            >Pricing</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="why-us"
+            href="#why-us"
+            >Why Us</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="gallery"
+            href="#gallery"
+            >Gallery</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs"
+            data-path="contact"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md shrink-0">
+          <div class="hidden lg:flex flex-col items-end text-right">
+            <div class="flex items-center gap-space-xs">
+              <span class="text-outline-variant font-label-md text-label-md"
+                >/</span
+              >
+            </div>
+          </div>
+          <a
+            class="hidden sm:inline-flex items-center justify-center h-11 px-space-lg rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-sm hover:brightness-105 active:scale-95 transition-all"
+            data-path="contact"
+            href="#quote"
+            >Get a Quote</a
+          ><button
+            id="mobile-menu-toggle"
+            class="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl text-on-surface hover:bg-surface-container transition-colors"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span
+              id="mobile-menu-icon"
+              class="material-symbols-outlined"
+              aria-hidden="true"
+              >menu</span
+            >
+          </button>
+        </div>
+        <nav
+          id="mobile-menu"
+          class="hidden xl:hidden absolute top-full left-0 w-full border-t border-outline-variant/30 bg-surface shadow-lg px-gutter py-space-md"
+          aria-label="Mobile navigation"
+        >
+          <div class="flex flex-col gap-space-xs">
+            <a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="home"
+              href="#home"
+              >Home</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="services"
+              href="#services"
+              >Services</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="brands"
+              href="#brands"
+              >Brands</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="pricing"
+              href="#pricing"
+              >Pricing</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="why-us"
+              href="#why-us"
+              >Why Us</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="gallery"
+              href="#gallery"
+              >Gallery</a
+            ><a
+              class="block rounded-lg px-space-md py-space-sm font-label-lg text-label-lg text-on-surface hover:bg-surface-container-low"
+              data-path="contact"
+              href="#contact"
+              >Contact</a
+            ><a
+              class="mt-space-xs inline-flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-space-lg font-label-lg text-label-lg text-on-primary shadow-sm"
+              data-path="contact"
+              href="#quote"
+              >Get a Quote</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-surface pb-16 md:pb-0">
+      <div class="flex flex-col w-full">
+        <!-- 1. HERO SECTION -->
+        <section
+          id="home"
+          class="relative w-full overflow-hidden bg-on-background text-on-primary -mt-20 pt-20"
+        >
+          <div class="absolute inset-0 z-0">
+            <img
+              class="w-full h-full object-cover object-center"
+              alt="Professional HVAC Technician servicing air conditioner"
+              src="images/high_end_cinematic_photography_of_a_professional_certified_hvac_technician_in.png"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/65 to-transparent"
+            ></div>
+          </div>
+
+          <div
+            class="relative z-10 w-full px-gutter py-space-xl lg:py-32 max-w-7xl mx-auto flex flex-col justify-center"
+          >
+            <div class="max-w-3xl flex flex-col gap-space-md">
+              <div
+                class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface/15 backdrop-blur-md text-secondary-fixed self-start border border-surface/20"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >ac_unit</span
+                >
+                <span
+                  class="font-label-md text-label-md tracking-wide uppercase"
+                  >Zimbabwe's Climate Specialists</span
+                >
+              </div>
+              <h1
+                class="font-display-hero text-display-hero-mobile md:text-display-hero font-bold tracking-tight text-on-primary"
+              >
+                Breathe Easy, Live Cool in Harare.
+              </h1>
+              <p
+                class="font-body-lg text-body-lg text-inverse-on-surface/90 max-w-2xl leading-relaxed"
+              >
+                Premium split-system air conditioning supply, precision
+                installation, and maintenance across Harare and surrounding
+                areas. We sell. We install.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+                <a
+                  class="inline-flex items-center justify-center h-12 px-space-xl rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all"
+                  href="#quote"
+                >
+                  Get Free Quotation
+                </a>
+                <a
+                  class="inline-flex items-center justify-center gap-space-xs h-12 px-space-lg rounded-xl bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-md hover:bg-surface-container transition-all"
+                  href="https://wa.me/263783081068"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[22px]"
+                    >chat</span
+                  >
+                  <span class="">Chat on WhatsApp</span>
+                </a>
+              </div>
+              <div
+                class="mt-space-lg pt-space-md border-t border-surface/15 flex flex-wrap items-center gap-y-space-sm gap-x-space-lg text-inverse-on-surface/90 font-label-md text-label-md"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[18px]"
+                    >verified</span
+                  >
+                  <span class="">Authorized Brand Retailer</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[18px]"
+                    >check_circle</span
+                  >
+                  <span class="">$90 Flat-Rate Install</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[18px]"
+                    >bolt</span
+                  >
+                  <span class="">Rapid Same-Day Response</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 2. SERVICES SECTION -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-xl"
+          id="services"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md"
+            >
+              <div class="flex flex-col gap-space-xs max-w-xl">
+                <span
+                  class="font-label-md text-label-md text-primary uppercase tracking-widest"
+                  >Our Capabilities</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg font-bold text-on-surface"
+                >
+                  Expert Climate Services
+                </h2>
+              </div>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-md"
+              >
+                Engineered for continuous domestic cooling and heavy commercial
+                duty under Zimbabwean summer peak conditions.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- Service 1 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+              >
+                <div class="h-48 w-full overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Professional certified HVAC technician in Harare precisely securing an indoor wall unit split air conditioner with neat trunking inside a modern living space"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuApEr5Z87ZLNRLHfKRnrMERzdZ-TT7DYzX0dLLwHzRWLMLHSO21DptpUhimzhdNbzHjzsqJWBzjLSkxR91_R9XiH_lOkN9dAqIosf_cTacMKjARA_L3li-HXjMOKj_t8jaFelIeqXKRV2nWynwBo1jm4YDYHqdvheUQhpj0aTwB5Hh3hJav-T7_Gcymmtgy8KNN6nAl4msoCns3VrY68NeY3IOc8E9GkyZxQBb-xG-W"
+                  />
+                  <div class="absolute top- space-sm left-space-sm">
+                    <span
+                      class="px-space-sm py-space-xs rounded-lg bg-surface/90 backdrop-blur-sm text-primary font-label-md text-label-md font-bold shadow-xs"
+                      >01 • Fitment</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col gap-space-sm flex-1">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                  >
+                    AC Supply &amp; Installation
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Precision sizing and split-system fitting with neat
+                    trunking, sealed penetrations, vacuum testing, and complete
+                    electrical safety checks.
+                  </p>
+                  <div
+                    class="mt-auto pt-space-md flex items-center text-primary font-label-md text-label-md gap-space-xs"
+                  >
+                    <span class="">Standard $90 flat rate install</span>
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Service 2 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+              >
+                <div class="h-48 w-full overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="HVAC engineer outdoors in Harare checking condenser manifold gauges and testing refrigerant gas levels with specialized diagnostic equipment on residential heat pump"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhNekZG9U2KOmpDCgnvZEgeFPgJFZBzE5oDTWBVREgSereE6ixXRyXKRhta0cApCOtwlhbOg7jLgG5dlU9MmPHo3UcPR14fVWj48_hSVOxS5EwQa9B1xu7-shj-hREH1YnGXTydvNMF-fgDp1mVrkNWxYGESOtoeWS9LiSf7zteH8yZi13M6A_3RCrvuaI-mpt4B8BfI2n8KRBLutnlK4YK3E5THY6FL_LLsqlrjhg"
+                  />
+                  <div class="absolute top- space-sm left-space-sm">
+                    <span
+                      class="px-space-sm py-space-xs rounded-lg bg-surface/90 backdrop-blur-sm text-primary font-label-md text-label-md font-bold shadow-xs"
+                      >02 • Repairs</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col gap-space-sm flex-1">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                  >
+                    AC Diagnostics &amp; Repairs
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Fast troubleshooting of refrigerant leaks, electrical PCB
+                    faults, weak airflow, and noisy compressors. Same-day
+                    emergency callouts.
+                  </p>
+                  <div
+                    class="mt-auto pt-space-md flex items-center text-primary font-label-md text-label-md gap-space-xs"
+                  >
+                    <span class="">Genuine factory replacement parts</span>
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Service 3 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow overflow-hidden group"
+              >
+                <div class="h-48 w-full overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Deep sanitization and pressure coil cleaning of an indoor split AC evaporator unit with specialized foaming cleaner for fresh indoor air purity"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6abqulvn51HSQMw1XoPoDgukeL4YRWYx3xwtAlcsAgcWlBNr5zoy2cUghLuxsc6rgBq2snmXq62CKHzd8EnxLvuLKXJM7oaUx7mjjfStvU-uRohne9dxI5YzNm605Ht3nUSDF87RWIfO1xbPpd5hU5cTaYxiAVWZjtvflZKz0XXkHlsXGpr7OZbhTtQLfJ_jdVlF7fZHzr0GxMI1Cxw_G-zAGg0Me3M9M9BqsTD14"
+                  />
+                  <div class="absolute top- space-sm left-space-sm">
+                    <span
+                      class="px-space-sm py-space-xs rounded-lg bg-surface/90 backdrop-blur-sm text-primary font-label-md text-label-md font-bold shadow-xs"
+                      >03 • Longevity</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg flex flex-col gap-space-sm flex-1">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                  >
+                    Preventative Maintenance
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Deep coil sanitization, gas pressure rebalancing,
+                    antimicrobial filter scrubbing, and amp-draw testing to
+                    reduce monthly utility costs.
+                  </p>
+                  <div
+                    class="mt-auto pt-space-md flex items-center text-primary font-label-md text-label-md gap-space-xs"
+                  >
+                    <span class=""
+                      >Scheduled residential &amp; corporate plans</span
+                    >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 3. TRUSTED BRANDS SHOWCASE -->
+        <section
+          class="w-full bg-surface-container-low py-space-xl"
+          id="brands"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="flex flex-col items-center text-center gap-space-xs max-w-2xl mx-auto"
+            >
+              <span
+                class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider"
+                >Verified Stock</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Leading Inverter Brands We Install
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Engineered for low-noise operation, rapid cooling, and low
+                energy consumption during power shedding or solar backup cycles.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- Brand 1 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md"
+                    >High Demand</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-secondary-container text-on-secondary-container p-1 rounded-full bg-secondary/10"
+                    >eco</span
+                  >
+                </div>
+                <div class="my-space-md">
+                  <h3
+                    class="font-headline-md text-headline-md font-bold text-on-surface"
+                  >
+                    Electro Master
+                  </h3>
+                  <span
+                    class="font-label-md text-label-md text-primary font-semibold"
+                    >Inverter Series</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-lg"
+                >
+                  High efficiency, whisper-quiet operation &amp; best value for
+                  Harare homes and corporate workspaces.
+                </p>
+                <div
+                  class="mt-auto pt-space-md border-t border-surface-container flex items-center justify-between"
+                >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Full Inverter Tech</span
+                  >
+                  <a
+                    class="font-label-md text-label-md text-primary hover:text-primary-container font-bold inline-flex items-center gap-1"
+                    href="#quote"
+                  >
+                    Inquire Availability
+                    <span class="material-symbols-outlined text-[16px]"
+                      >chevron_right</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <!-- Brand 2 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md"
+                    >Smart Cooling</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary p-1 rounded-full bg-primary/10"
+                    >wifi</span
+                  >
+                </div>
+                <div class="my-space-md">
+                  <h3
+                    class="font-headline-md text-headline-md font-bold text-on-surface"
+                  >
+                    TCL
+                  </h3>
+                  <span
+                    class="font-label-md text-label-md text-primary font-semibold"
+                    >Smart Climate Line</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-lg"
+                >
+                  Smart climate control with rapid turbo cooling technology and
+                  intelligent generator-friendly cycling.
+                </p>
+                <div
+                  class="mt-auto pt-space-md border-t border-surface-container flex items-center justify-between"
+                >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >WiFi App Enabled</span
+                  >
+                  <a
+                    class="font-label-md text-label-md text-primary hover:text-primary-container font-bold inline-flex items-center gap-1"
+                    href="#quote"
+                  >
+                    Inquire Availability
+                    <span class="material-symbols-outlined text-[16px]"
+                      >chevron_right</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <!-- Brand 3 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md"
+                    >Heavy Duty</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-tertiary p-1 rounded-full bg-tertiary/10"
+                    >shield</span
+                  >
+                </div>
+                <div class="my-space-md">
+                  <h3
+                    class="font-headline-md text-headline-md font-bold text-on-surface"
+                  >
+                    Hisense
+                  </h3>
+                  <span
+                    class="font-label-md text-label-md text-primary font-semibold"
+                    >Inverter Expert</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-lg"
+                >
+                  Durable anti-corrosive engineering with intelligent eco
+                  temperature sensing and dual rotary compression.
+                </p>
+                <div
+                  class="mt-auto pt-space-md border-t border-surface-container flex items-center justify-between"
+                >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Gold Fin Radiator</span
+                  >
+                  <a
+                    class="font-label-md text-label-md text-primary hover:text-primary-container font-bold inline-flex items-center gap-1"
+                    href="#quote"
+                  >
+                    Inquire Availability
+                    <span class="material-symbols-outlined text-[16px]"
+                      >chevron_right</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 4. TRANSPARENT PRICING SECTION -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-xl"
+          id="pricing"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="flex flex-col items-center text-center gap-space-xs max-w-2xl mx-auto"
+            >
+              <span
+                class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider"
+                >Unbeatable Value</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Electro Master Inverter Pricing
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Clear, upfront equipment pricing. TCL &amp; Hisense quotes
+                available on request.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <!-- 9000 BTU -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Capacity</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-surface mt-1"
+                >
+                  9,000 BTU
+                </h3>
+                <div class="my-space-md">
+                  <span
+                    class="font-metric-display text-metric-display font-bold text-primary"
+                    >$460</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                    >Unit Only • VAT Inclusive</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-md"
+                >
+                  Ideal for bedrooms, nursery, or private small study rooms up
+                  to 18m².
+                </p>
+                <ul
+                  class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
+                >
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Eco Inverter Saver
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Sleep Mode Quiet
+                  </li>
+                </ul>
+                <a
+                  class="mt-auto w-full py-space-sm px-space-md text-center rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-all"
+                  href="#quote"
+                >
+                  Order 9,000 BTU
+                </a>
+              </div>
+              <!-- 12000 BTU (FEATURED) -->
+              <div
+                class="relative flex flex-col rounded-2xl bg-surface-container-lowest p-space-lg shadow-lg ring-2 ring-secondary transition-shadow"
+              >
+                <div
+                  class="absolute -top-3 left-1/2 -translate-x-1/2 px-space-md py-0.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-xs"
+                >
+                  MOST POPULAR
+                </div>
+                <span
+                  class="font-label-md text-label-md text-primary font-semibold mt-1"
+                  >Capacity</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-surface mt-1"
+                >
+                  12,000 BTU
+                </h3>
+                <div class="my-space-md">
+                  <span
+                    class="font-metric-display text-metric-display font-bold text-secondary"
+                    >$480</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                    >Unit Only • VAT Inclusive</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-md"
+                >
+                  Perfect for standard master bedrooms, living lounges, &amp;
+                  executive suites (up to 25m²).
+                </p>
+                <ul
+                  class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
+                >
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Fast Cooling Boost
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Solar Friendly Inverter
+                  </li>
+                </ul>
+                <a
+                  class="mt-auto w-full py-space-sm px-space-md text-center rounded-xl bg-secondary text-on-secondary font-label-md text-label-md font-semibold shadow hover:brightness-105 transition-all"
+                  href="#quote"
+                >
+                  Order 12,000 BTU
+                </a>
+              </div>
+              <!-- 18000 BTU -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Capacity</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-surface mt-1"
+                >
+                  18,000 BTU
+                </h3>
+                <div class="my-space-md">
+                  <span
+                    class="font-metric-display text-metric-display font-bold text-primary"
+                    >$680</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                    >Unit Only • VAT Inclusive</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-md"
+                >
+                  Spacious living areas, open-plan dining halls, and multi-desk
+                  offices (up to 38m²).
+                </p>
+                <ul
+                  class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
+                >
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    High Airflow Throw
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Heavy Duty Compressor
+                  </li>
+                </ul>
+                <a
+                  class="mt-auto w-full py-space-sm px-space-md text-center rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-all"
+                  href="#quote"
+                >
+                  Order 18,000 BTU
+                </a>
+              </div>
+              <!-- 24000 BTU -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-low p-space-lg shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                  >Capacity</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-surface mt-1"
+                >
+                  24,000 BTU
+                </h3>
+                <div class="my-space-md">
+                  <span
+                    class="font-metric-display text-metric-display font-bold text-primary"
+                    >$790</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                    >Unit Only • VAT Inclusive</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-md"
+                >
+                  Large commercial shops, boardroom suites, church halls, and
+                  luxury open plans (up to 55m²).
+                </p>
+                <ul
+                  class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
+                >
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Maximum Thermal Pull
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[16px]"
+                      >check</span
+                    >
+                    Commercial Durability
+                  </li>
+                </ul>
+                <a
+                  class="mt-auto w-full py-space-sm px-space-md text-center rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-all"
+                  href="#quote"
+                >
+                  Order 24,000 BTU
+                </a>
+              </div>
+            </div>
+            <!-- Installation Flat-Rate Callout Banner -->
+            <div
+              class="rounded-2xl bg-gradient-to-r from-primary to-primary-container p-space-lg md:p-space-xl text-on-primary shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg"
+            >
+              <div class="flex items-start gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-xl bg-surface/20 flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-[28px] text-on-primary"
+                    >handyman</span
+                  >
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h4 class="font-headline-md text-headline-md font-bold">
+                    Standard Installation &amp; Quality Accessories
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-surface-container-low max-w-xl"
+                  >
+                    Just
+                    <strong class="text-secondary-fixed text-headline-sm"
+                      >$90 per air conditioner unit</strong
+                    >
+                    across Harare. Includes heavy wall bracket, 3m copper
+                    piping, trunking &amp; full commissioning.
+                  </p>
+                </div>
+              </div>
+              <a
+                class="shrink-0 h-12 px-space-xl rounded-xl bg-secondary-fixed text-on-secondary-fixed font-label-lg text-label-lg font-bold shadow hover:brightness-105 active:scale-95 transition-all inline-flex items-center justify-center"
+                href="#quote"
+              >
+                Book Installation
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- 5. WHY PURECHARGE (TRUST INDICATORS) -->
+        <section
+          class="w-full bg-surface-container-low py-space-xl"
+          id="why-us"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div class="max-w-2xl flex flex-col gap-space-xs">
+              <span
+                class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider"
+                >Uncompromising Quality</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Why Harare Trusts PureCharge
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                We combine transparent pricing with rigorous engineering
+                standards so your climate system performs faultlessly year after
+                year.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg"
+            >
+              <!-- Trust 1 -->
+              <div
+                class="flex flex-col gap-space-sm p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >square_foot</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                >
+                  Professional Sizing
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Proper BTU capacity calculations factoring in sun exposure,
+                  window glazing, ceiling heights, and room occupancies.
+                </p>
+              </div>
+              <!-- Trust 2 -->
+              <div
+                class="flex flex-col gap-space-sm p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >verified_user</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                >
+                  Certified Installers
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Clean pipe routing, clean PVC ducting trunking,
+                  vibration-dampened brackets, and tidy, dust-free workmanship.
+                </p>
+              </div>
+              <!-- Trust 3 -->
+              <div
+                class="flex flex-col gap-space-sm p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >location_city</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                >
+                  Harare-Wide Coverage
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Prompt service van dispatch covering Borrowdale, Avondale,
+                  Mount Pleasant, CBD, Highlands, and surrounding suburbs.
+                </p>
+              </div>
+              <!-- Trust 4 -->
+              <div
+                class="flex flex-col gap-space-sm p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-primary-container/10 text-primary-container flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >support_agent</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                >
+                  Ongoing Support
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Genuine factory warranty backing, routine seasonal maintenance
+                  visits, and direct telephone technical support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 6. GALLERY HIGHLIGHTS -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-xl"
+          id="gallery"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md"
+            >
+              <div class="flex flex-col gap-space-xs">
+                <span
+                  class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider"
+                  >Our Recent Work</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg font-bold text-on-surface"
+                >
+                  Harare Installation Gallery
+                </h2>
+              </div>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-md"
+              >
+                See the clean precision of our indoor flush wall mountings and
+                neatly piped outdoor condensers.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+              <div
+                class="group relative rounded-2xl overflow-hidden shadow-sm h-72"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Neat residential inverter air conditioner unit mounted seamlessly above a bed in a modern Borrowdale Harare bedroom interior with soft ambient light"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV5ZHtHvRKGwC0cgODTv4OO5PhlYZPPXAD_iVBp3Gt8fxv9NNCU5SmW-TLikRQyminX48kT-paItPVo8_gCgbLxD-Zy8RGoV95SfjUD1Sp1epCB4D0vuFGNQ7LjfnmBkIGECiGaENP4EYvwAX8XaD1eCGkZf3vaji9MGJfJS_-SD1EC0WsZ1ZvAxqk734gTtG13N2nuDGbx7CG8nrlilavP6MSdagn5FFEhHAGgmid"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent flex flex-col justify-end p-space-md text-on-primary"
+                >
+                  <span class="font-headline-sm text-headline-sm font-semibold"
+                    >Borrowdale Residence</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-surface-container-highest"
+                    >Electro Master 12,000 BTU Inverter</span
+                  >
+                </div>
+              </div>
+              <div
+                class="group relative rounded-2xl overflow-hidden shadow-sm h-72"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="HVAC outdoor condenser units perfectly aligned on heavy galvanized wall brackets with neat white PVC trunking along a suburban Harare brick wall"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzB33VmANsJ7A3l7-waHTrgFgvr0VRlndjI0Z7v8MNWR5Gvd_m1wfDhEimQnWdXjqEoMBGhFhwcKxfnP33h0oPTywDvvuYQ4gXfdNzHa07xobZwu5Av1gm7uui1fMaMdMjTWKVbZHdC5FVdFGlYoXHhbpsidXp_sYHlPqGe7iOukPMgdcHoc84wkfitwsPfbGM_SsflPYn9r5mq00JjFQIrZZBHQf2jPnCB5FAKsk"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent flex flex-col justify-end p-space-md text-on-primary"
+                >
+                  <span class="font-headline-sm text-headline-sm font-semibold"
+                    >Avondale Corporate Suites</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-surface-container-highest"
+                    >Multi-Zone Outdoor Condenser Banks</span
+                  >
+                </div>
+              </div>
+              <div
+                class="group relative rounded-2xl overflow-hidden shadow-sm h-72"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="PureCharge certified technician in blue uniform testing split system air conditioner temperatures using laser digital thermometer in Mount Pleasant Harare"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsOeeO5jbnq6ZYEVzZcuYmrtaiy0graALjkDNMgBr95oIbO6qeD2I583wtrWeF8VCg_s2D8NDC5tlOX0Zua3qtaR35xXLixPx4LzNH-z6MAxwdhr3vwwsishAcu-yb9HEc-PqIbbaUU5TmmJjh0ikFHeMf9Hsq4SEAgNrSoImnE37j40asTrWsf_U5cLdpXyrkB5UDqbQJFVAaybEqiYEBOPos0rvIQHRgFo5mhDFJ"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent flex flex-col justify-end p-space-md text-on-primary"
+                >
+                  <span class="font-headline-sm text-headline-sm font-semibold"
+                    >Mount Pleasant Home</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-surface-container-highest"
+                    >Commissioning &amp; Thermal Testing</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 7. CLIENT EXPERIENCES (TESTIMONIALS) -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="text-center max-w-2xl mx-auto flex flex-col gap-space-xs"
+            >
+              <span
+                class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider"
+                >Client Experiences</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Trusted by Homes &amp; Offices
+              </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- Review 1 -->
+              <div
+                class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm gap-space-md"
+              >
+                <div class="flex items-center text-amber-500">
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface italic flex-1"
+                >
+                  "Exceptional installation in Borrowdale. Neat pipework and the
+                  12,000 BTU Electro Master is ice cold."
+                </p>
+                <div
+                  class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-label-md"
+                  >
+                    HB
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-md text-label-md font-semibold text-on-surface"
+                      >Homeowner</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      >Borrowdale, Harare</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Review 2 -->
+              <div
+                class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm gap-space-md"
+              >
+                <div class="flex items-center text-amber-500">
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface italic flex-1"
+                >
+                  "PureCharge outfitted our Avondale offices. Prompt quotation,
+                  fair pricing, and excellent service."
+                </p>
+                <div
+                  class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold text-label-md"
+                  >
+                    CA
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-md text-label-md font-semibold text-on-surface"
+                      >Commercial Client</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      >Avondale, Harare</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Review 3 -->
+              <div
+                class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm gap-space-md"
+              >
+                <div class="flex items-center text-amber-500">
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >star</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface italic flex-1"
+                >
+                  "Same-day repair on our lounge split unit. Polite technicians
+                  who cleaned up thoroughly."
+                </p>
+                <div
+                  class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center font-bold text-label-md"
+                  >
+                    RM
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-md text-label-md font-semibold text-on-surface"
+                      >Resident</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      >Mount Pleasant, Harare</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 8. INSTANT QUOTATION & BOOKING FORM -->
+        <section class="w-full bg-surface-container-low py-space-xl" id="quote">
+          <div
+            class="w-full px-gutter max-w-4xl mx-auto flex flex-col gap-space-lg"
+          >
+            <div class="text-center flex flex-col gap-space-xs">
+              <span
+                class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider"
+                >Fast Turnaround</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Request a Fast Quotation
+              </h2>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto"
+              >
+                Get transparent hardware + install pricing customized to your
+                room sizes.
+              </p>
+            </div>
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-space-lg md:p-space-xl shadow-md"
+            >
+              <form
+                class="grid grid-cols-1 md:grid-cols-2 gap-space-md"
+                id="quoteForm"
+                onsubmit="
+                  event.preventDefault();
+                  alert(
+                    'Thank you! A PureCharge technician will contact you shortly.',
+                  );
+                "
+              >
+                <!-- Name -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="fullName"
+                    >Your Full Name</label
+                  >
+                  <input
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="fullName"
+                    placeholder="e.g. Tendai Mukamuri"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <!-- Phone / WhatsApp -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="phoneNum"
+                    >Phone / WhatsApp Number</label
+                  >
+                  <input
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="phoneNum"
+                    placeholder="0783081068 or 0718242482"
+                    required=""
+                    type="tel"
+                  />
+                </div>
+                <!-- Suburb in Harare -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="suburb"
+                    >Harare Suburb / Area</label
+                  >
+                  <input
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="suburb"
+                    placeholder="e.g. Borrowdale, Avondale, Mount Pleasant"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <!-- Service Required -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="serviceType"
+                    >Service Required</label
+                  >
+                  <select
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="serviceType"
+                  >
+                    <option value="supply-install">
+                      Supply &amp; Install Complete Package
+                    </option>
+                    <option value="unit-only">AC Unit Purchase Only</option>
+                    <option value="install-only">
+                      Installation Only ($90 flat rate)
+                    </option>
+                    <option value="repair">
+                      Diagnostics, Regas &amp; Repair
+                    </option>
+                    <option value="maintenance">
+                      Preventative Service Clean
+                    </option>
+                  </select>
+                </div>
+                <!-- Preferred Brand -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="brandSelect"
+                    >Preferred Brand</label
+                  >
+                  <select
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="brandSelect"
+                  >
+                    <option value="electromaster">
+                      Electro Master Inverter (Best Value)
+                    </option>
+                    <option value="tcl">TCL Smart Inverter</option>
+                    <option value="hisense">Hisense Inverter Expert</option>
+                    <option value="advice">
+                      Not Sure / Recommend For My Room
+                    </option>
+                  </select>
+                </div>
+                <!-- AC Capacity -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="btuSelect"
+                    >Cooling Capacity</label
+                  >
+                  <select
+                    class="h-11 px-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="btuSelect"
+                  >
+                    <option value="12000">
+                      12,000 BTU - Standard Lounge / Bedroom ($480)
+                    </option>
+                    <option value="9000">
+                      9,000 BTU - Small Bedroom / Office ($460)
+                    </option>
+                    <option value="18000">
+                      18,000 BTU - Large Open Area ($680)
+                    </option>
+                    <option value="24000">
+                      24,000 BTU - Commercial / Boardroom ($790)
+                    </option>
+                    <option value="multiple">
+                      Multiple Units / Full Building
+                    </option>
+                  </select>
+                </div>
+                <!-- Message -->
+                <div class="flex flex-col gap-space-xs md:col-span-2">
+                  <label
+                    class="font-label-md text-label-md text-on-surface-variant"
+                    for="notes"
+                    >Additional Details (Optional)</label
+                  >
+                  <textarea
+                    class="p-space-md rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    id="notes"
+                    placeholder="Tell us about the room, existing wiring, or preferred appointment time..."
+                    rows="3"
+                  ></textarea>
+                </div>
+                <!-- Submit CTA -->
+                <div
+                  class="md:col-span-2 pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-md"
+                >
+                  <button
+                    class="w-full sm:w-auto h-12 px-space-xl rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:brightness-105 active:scale-95 transition-all"
+                    type="submit"
+                  >
+                    Submit Quotation Request
+                  </button>
+                  <a
+                    class="inline-flex items-center gap-space-xs text-secondary font-label-md text-label-md hover:underline"
+                    href="https://wa.me/263783081068"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >chat</span
+                    >
+                    <span class=""
+                      >Or chat directly on WhatsApp (+263 783 081 068)</span
+                    >
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- 9. CONTACT & HARARE SERVICE AREA -->
+        <section
+          class="w-full bg-surface-container-lowest py-space-xl"
+          id="contact"
+        >
+          <div
+            class="w-full px-gutter max-w-7xl mx-auto flex flex-col gap-space-xl"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+            >
+              <!-- Contact Information -->
+              <div class="lg:col-span-5 flex flex-col gap-space-lg">
+                <div class="flex flex-col gap-space-xs">
+                  <span
+                    class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider"
+                    >Fast Response</span
+                  >
+                  <h2
+                    class="font-headline-lg text-headline-lg font-bold text-on-surface"
+                  >
+                    PureCharge Operations
+                  </h2>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Available 6 days a week with rapid emergency technician
+                    dispatch across the capital.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-space-md">
+                  <!-- Direct Calls -->
+                  <div
+                    class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-low"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >phone_in_talk</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Direct Voice Helplines</span
+                      >
+                      <div
+                        class="flex flex-wrap items-center gap-space-xs mt-1"
+                      >
+                        <a
+                          class="font-headline-sm text-headline-sm text-primary font-bold hover:underline"
+                          href="tel:0783081068"
+                          >0783 081 068</a
+                        >
+                        <span class="text-on-surface-variant">/</span>
+                        <a
+                          class="font-headline-sm text-headline-sm text-primary font-bold hover:underline"
+                          href="tel:0718242482"
+                          >0718 242 482</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- WhatsApp -->
+                  <div
+                    class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-low"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >chat</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >WhatsApp Quotes &amp; Dispatch</span
+                      >
+                      <div
+                        class="flex flex-wrap items-center gap-space-xs mt-1"
+                      >
+                        <a
+                          class="font-label-lg text-label-lg text-secondary font-bold hover:underline"
+                          href="https://wa.me/263783081068"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          >+263 783 081 068</a
+                        >
+                        <span class="text-on-surface-variant">/</span>
+                        <a
+                          class="font-label-lg text-label-lg text-secondary font-bold hover:underline"
+                          href="https://wa.me/263718242482"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          >+263 718 242 482</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Service Coverage Suburbs -->
+                  <div
+                    class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-low"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >map</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant font-semibold"
+                        >Primary Service Areas</span
+                      >
+                      <p class="font-body-md text-body-md text-on-surface mt-1">
+                        Borrowdale, Glen Lorne, Avondale, Highlands, Eastlea,
+                        Mount Pleasant, Westgate, Greendale, Newlands &amp;
+                        Greater Harare.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Stylized Harare Map Container -->
+              <div
+                class="lg:col-span-7 h-96 rounded-3xl overflow-hidden shadow-md relative"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center"
+                  data-location="Harare, Zimbabwe"
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCtzg844IDXA3aA3RifHiaksEUSs1QyY-mfgPC8ryXTQVs-XMlgHfT2DNKZt7phM7lXbrUlqTauRnTXk8M1XDmgVT1eLc3KrJEkltgJF2J299lE80mrEoLPfR863DQsMy8rr9DmAhRxusk4i1N31ozUOUnlAWfDNzVYvHY7Cdk2bv9HPSgckWkOXZJSzDc8ttSHVfI2zVtDMshupcZm3Ye_AvLZyDCW2ZWiKGsZq7CW&quot;);
+                  "
+                ></div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md p-space-md rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center justify-between"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <span
+                      class="material-symbols-outlined text-primary text-[24px]"
+                      >pin_drop</span
+                    >
+                    <div>
+                      <span
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                        >Harare Metropolitan</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant block"
+                        >Full Residential &amp; Commercial Coverage</span
+                      >
+                    </div>
+                  </div>
+                  <a
+                    class="hidden sm:inline-flex items-center justify-center h-9 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all"
+                    href="https://wa.me/263783081068"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Dispatch Tech
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="w-full bg-on-background text-on-primary">
+      <div class="w-full px-gutter py-space-xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"
+        >
+          <div class="flex flex-col gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABcJVZnh0bbUL_vBrO-wkDdGd-gu_vGYFirki416MSoZVp3qvV--qJ4rB_ay2yzxgEmP5dVpkVNRxJZmg_DoGHHcvLX1R7swog5xTuPiTx98gFMtk9gRgNL4UsFdix40WxvViwuAhrQ6NjEQ46hBmXOMmiG4_PDLInuUOLfRweIcv8YBvA3gMiHWrHp6xgyUDnFS4IS8d1ANBXlCugfIeh1TY6R3SUpCImmBm3IsQ17-C3nISXIsWkUQ"
+                alt="PureCharge Logo"
+                class="h-9 w-auto object-contain brightness-0 invert"
+              />
+            </div>
+            <p class="font-body-md text-body-md text-outline-variant">
+              Zimbabwe's premier climate control and HVAC engineering
+              specialists. Delivering intelligent cooling, ventilation, and heat
+              pump infrastructure with pristine precision.
+            </p>
+            <div
+              class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-high/10 text-secondary-fixed"
+            >
+              <span class="material-symbols-outlined text-[18px]">verified</span
+              ><span class="font-label-md text-label-md"
+                >Harare Metropolitan Service Area</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-md">
+            <span class="font-headline-sm text-headline-sm text-on-primary"
+              >Quick Links</span
+            >
+            <ul
+              class="flex flex-col gap-space-xs font-body-md text-body-md text-outline-variant"
+            >
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="services"
+                  href="#"
+                  >Our Services</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="brands"
+                  href="#"
+                  >Supported Brands</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="pricing"
+                  href="#"
+                  >HVAC Pricing &amp; Plans</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="why-us"
+                  href="#"
+                  >Why PureCharge</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="gallery"
+                  href="#"
+                  >Installation Gallery</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-on-primary transition-colors"
+                  data-path="contact"
+                  href="#"
+                  >Request a Site Survey</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-md">
+            <span class="font-headline-sm text-headline-sm text-on-primary"
+              >Contact &amp; Operations</span
+            >
+            <div
+              class="flex flex-col gap-space-sm font-body-md text-body-md text-outline-variant"
+            >
+              <div class="flex items-start gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[20px] text-tertiary-fixed"
+                  >location_on</span
+                ><span class=""
+                  >Harare, Zimbabwe (Residential &amp; Commercial Units)</span
+                >
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[20px] text-secondary-fixed"
+                  >phone_in_talk</span
+                >
+                <div class="flex flex-col">
+                  <a
+                    class="hover:text-on-primary transition-colors"
+                    href="tel:0783081068"
+                    >+263 783 081 068</a
+                  ><a
+                    class="hover:text-on-primary transition-colors"
+                    href="tel:0718242482"
+                    >+263 718 242 482</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[20px] text-inverse-primary"
+                  >schedule</span
+                ><span class="">Mon - Sat: 07:30 - 17:30 | 24/7 Emergency</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-md">
+            <span class="font-headline-sm text-headline-sm text-on-primary"
+              >WhatsApp Connect</span
+            >
+            <p class="font-body-md text-body-md text-outline-variant">
+              Instant quotes, rapid breakdown support, and live technician
+              dispatch over WhatsApp.
+            </p>
+            <a
+              class="inline-flex items-center justify-center gap-space-xs h-11 px-space-lg rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg hover:brightness-110 transition-all"
+              href="https://wa.me/263783081068"
+              rel="noopener noreferrer"
+              target="_blank"
+              ><span class="material-symbols-outlined text-[20px]">chat</span
+              ><span class="">Chat via WhatsApp</span></a
+            >
+          </div>
+        </div>
+        <div
+          class="mt-space-xl pt-space-lg border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-space-md text-outline-variant font-body-sm text-body-sm"
+        >
+          <p class="">
+            © 2025 PureCharge HVAC Systems Zimbabwe. All rights reserved.
+          </p>
+          <div class="flex items-center gap-space-lg">
+            <span class="">Climate Mastery &amp; Energy Intelligence</span
+            ><span class="">Licensed &amp; Certified Technicians</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="fixed right-4 bottom-6 z-50 md:hidden flex flex-col items-center gap-3"
+    >
+      <a
+        class="h-12 w-12 rounded-full flex items-center justify-center bg-primary text-on-primary shadow-lg hover:scale-105 active:scale-95 transition-transform"
+        href="tel:0783081068"
+        aria-label="Instant Call"
+        ><span class="material-symbols-outlined text-[22px]" aria-hidden="true"
+          >call</span
+        ><span class="sr-only">Instant Call</span></a
+      ><a
+        class="h-12 w-12 rounded-full flex items-center justify-center bg-secondary text-on-secondary shadow-lg hover:scale-105 active:scale-95 transition-transform"
+        href="https://wa.me/263783081068"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="WhatsApp"
+        ><span class="material-symbols-outlined text-[22px]" aria-hidden="true"
+          >chat</span
+        ><span class="sr-only">WhatsApp</span></a
+      >
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+
+      function setMobileMenuOpen(isOpen) {
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation menu" : "Open navigation menu",
+        );
+        mobileMenuIcon.textContent = isOpen ? "close" : "menu";
+      }
+
+      menuToggle.addEventListener("click", () => {
+        setMobileMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      mobileMenu.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setMobileMenuOpen(false);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          !mobileMenu.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        )
+          setMobileMenuOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          menuToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          setMobileMenuOpen(false);
+          menuToggle.focus();
+        }
+      });
+    </script>
+  </body>
+</html>
